@@ -1,12 +1,12 @@
+import { MessageBox } from '@adminjs/design-system'
 import React, { ReactNode } from 'react'
 import { connect } from 'react-redux'
-import { MessageBox } from '@adminjs/design-system'
 
-import { NoticeMessageInState, ReduxState } from '../../store/store'
 import { dropNotice } from '../../store/actions/drop-notice'
 import { setNoticeProgress } from '../../store/actions/set-notice-progress'
+import { NoticeMessageInState, ReduxState } from '../../store/store'
 
-const TIME_TO_DISAPPEAR = 3
+const TIME_TO_DISAPPEAR = 10
 
 export type NotifyProgress = (options: {
   noticeId: string; progress: number;
@@ -118,6 +118,6 @@ const ConnectedNoticeBox = connect(
 )(NoticeBox)
 
 export {
-  ConnectedNoticeBox as default,
-  ConnectedNoticeBox as NoticeBox,
+  ConnectedNoticeBox as NoticeBox, ConnectedNoticeBox as default
 }
+
